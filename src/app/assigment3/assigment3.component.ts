@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-assigment3',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Assigment3Component implements OnInit {
 
-  constructor() { }
+  enable = false;
+  clicked = [];
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
+  doTheTaskOnTheButton() {
+    this.enable ? this.enable = false : this.enable = true;
+    this.clicked.push((this.clicked.length) + ' th click @ ' + new Date());
+  }
 }
